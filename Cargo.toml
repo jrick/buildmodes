@@ -1,0 +1,9 @@
+[package]
+name = "buildmodes"
+version = "0.1.0"
+authors = ["Josh Rickmar <jrick@conformal.com>"]
+links = "buildmodes"
+build = "build.rs"
+
+[dependencies]
+libc = "0.1.8"
