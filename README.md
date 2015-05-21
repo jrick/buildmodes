@@ -79,7 +79,7 @@ pub fn multiply(a: c_int, b: c_int) -> c_int {
 }
 ```
 
-It is then called by `main`, and the result is printed to `stdout`
+It is then called by `main`, and the result is printed to `stdout`:
 
 ```Rust
 fn main() {
