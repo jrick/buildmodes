@@ -47,6 +47,7 @@ single exported function:
 func Multiply(a, b int) int {
 	return a * b
 }
+```
 
 When using any of the C buildmodes, `cgo` creates the C function:
 
