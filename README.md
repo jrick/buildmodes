@@ -55,7 +55,8 @@ When using any of the C buildmodes, `cgo` creates the C function:
 int Multiply(int, int);
 ```
 
-This is the function that Rust calls.
+This is the function that Rust calls.  See the [cgo documentation](http://golang.org/cmd/cgo/)
+for more details about how `cgo` creates C interfaces for Go code.
 
 Since Rust does not understand C header files, external functions must
 be declared manually in an `extern` block.  This is done in
