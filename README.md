@@ -51,7 +51,7 @@ func Multiply(a, b int) int {
 
 When using any of the C buildmodes, `cgo` creates the C function:
 
-```
+```C
 int Multiply(int, int);
 ```
 
