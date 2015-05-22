@@ -20,22 +20,18 @@ To build and run the entire project, simply run:
 cargo run
 ```
 
-The printed number (20) is calculated and returned by Go as the
-multiplication of two numbers (4 and 5) passed by Rust.
+After compiling the Go and Rust code and executing the binary, the
+number 20 is printed.  This number is calculated and returned by Go as
+the multiplication of two numbers (4 and 5) passed by Rust.
 
 Explanation
 -----------
 
 When Cargo builds the project, it compiles and executes `build.rs`,
-which calls the `go` tool to build a C archive and writes it to a
-Cargo build directory.
-
-The `go build` call must be used to build a Go main package.  All cgo
-exported functions (annotated with `//export FuncName` directives) are
-exported by the archive.
-
-See the [Cargo documentation](http://doc.crates.io/build-script.html)
-for more details about build scripts.
+which calls the `go` tool to build a C archive from the Go source file
+`src/go/main.go` and writes it to a Cargo build directory.  See the
+[Cargo documentation](http://doc.crates.io/build-script.html) for more
+details about build scripts.
 
 If integrating with non-Cargo projects, the archive can be built
 manually by running something like:
@@ -44,8 +40,10 @@ manually by running something like:
 go build -buildmode=c-archive -o libbuildmode.a src/go/main.go
 ```
 
-The Go source file (`src/go/main.go`) is a `main` package with a
-single exported function:
+The `go build` call must be used to build a Go main package.  All cgo
+exported functions (annotated with `//export FuncName` directives) are
+exported by the archive.  For this example, there exists a single
+exported function:
 
 ```Go
 //export Multiply
@@ -54,7 +52,8 @@ func Multiply(a, b int) int {
 }
 ```
 
-When using any of the C buildmodes, `cgo` creates the C function:
+When using any of the C buildmodes, `cgo` will generate a C `Multiply`
+function with the signature:
 
 ```C
 int Multiply(int, int);
