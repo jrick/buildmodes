@@ -2,7 +2,7 @@ buildmodes
 ==========
 
 This repo demonstrates statically linking and calling Go code from
-other languages.  It requires Go 1.5 or higher, which will introduce
+a non-Go project.  It requires Go 1.5 or higher, which will introduce
 additional [execution modes](https://docs.google.com/document/d/1nr-TQHw_er6GOQRsF6T43GGhFDelrAP0NqSS_00RgZQ/edit?pli=1)
 to allow programs written in other languages to statically or
 dynamically link to and call Go code using the system C ABI.
