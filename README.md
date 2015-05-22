@@ -37,7 +37,7 @@ If integrating with non-Cargo projects, the archive can be built
 manually by running something like:
 
 ```bash
-go build -buildmode=c-archive -o libbuildmode.a src/go/main.go
+go build -buildmode=c-archive -o libbuildmodes.a src/go/main.go
 ```
 
 The `go build` call must be used to build a Go main package.  All cgo
